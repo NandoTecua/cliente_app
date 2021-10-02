@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Equipo 1</title>
+    <link rel="stylesheet" href="webix/webix.css" type="text/css"> 
+    <script src="webix/webix.js" type="text/javascript"></script>
+    <script src="js/functionsAjax.js" type="text/javascript"></script>
+    <script src="js/funcionesFormas.js" type="text/javascript"></script>
+    <script src="js/templates.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <style>
+            .toolbar_color{
+                background:aliceblue; 
+                text-align: center;
+                height:400;
+            }
+            .center {
+                margin: auto;
+                width: 50%;
+            }
+            .flex-container {
+                display: flex;
+                background-color: #70a5fa;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 1rem;
+                min-height: 200px;
+            }
+            .divPadre {
+                background-color: #70a5fa;
+            }
+            .divHijo {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 1rem;
+                min-height: 400px;
+            }
+            .minH {
+                min-height: 200px;
+                background-color: #70a5fa;
+            }
+            .min2 {
+                min-height: 200px;
+            }
+        </style>
+        <div id="input" class="center"></div>
+
+<script>
+
+const LogInWhole = {
+    id:'principalLogIn',type:'space',
+    rows:[
+        bienvenidoBanner,
+        formaLogIn,
+    ]
+};
+
+const NewsWhole = {
+    id: "htmlNews",
+    view:"scrollview",
+    scroll:'y',
+    body: {
+        autoheight:true,
+            rows:[
+            NoticiasBanner,
+        ]
+    }
+};
+
+const PassWhole = {
+    id: "htmlPass",
+    type:'space',
+    scroll:"auto",
+    rows:[
+        formaPass,
+    ]
+};
+
+const AccWhole = {
+    id: "htmlAcc",
+    type:'space',
+    scroll:"auto",
+    rows:[
+        formaAcc,
+    ]
+};
+
+const DocWhole = {
+    id: "htmlDoc",
+    type:'space',
+    scroll:"auto",
+    rows:[
+        formaDoc,
+    ]
+};
+
+var panelPrincipal = { view:"tabview",id:'PanelPrincipal',scroll:"y",hidden:true,cells:[     
+	      {header:"Inicio",id:'PanelInicio',body:NewsWhole,autowidth:true},
+          {header:"Passwords",id:'PanelPassword',body:PassWhole,autowidth:true},
+          {header:"Cuentas",id:'PanelAccounts',body:AccWhole,autowidth:true},
+          {header:"Documentos",id:'PanelDocuments',body:DocWhole,autowidth:true},          
+          {header:"Salir",id:'PanelCerrar',body:formaSalir,autowidth:true},
+	    ],
+	    multiview:{
+    	    animate:true
+    	}
+	}
+
+webix.ui({id:'principal',view:'scrollview',scroll:"y",body: {rows:[LogInWhole, panelPrincipal]} } );
+
+
+if( webix.storage.local.get("JWT") ) {
+    $$('FormaLogIn').clear();
+    $$('PanelPrincipal').show();
+	$$('principalLogIn').hide();
+    console.log('testy');
+    mostrarDocumentos();
+	mostrarCuentas();
+	mostrarPasswords();
+	irPorNoticias();
+} else {
+    $$('FormaLogIn').clear();
+    $$('PanelPrincipal').hide();
+	$$('principalLogIn').show();
+}
+
+$$("formPass1").bind("datatablePass");
+$$("formPasss2").bind("datatablePass");
+
+$$('datatablePass').attachEvent('onAfterSelect',function(id){
+    IdPass = $$('datatablePass').getItem(id)._id;
+    $$('passNew').hide();
+    $$('passModify').show();
+});
+
+$$("formAcc1").bind("datatableCuenta");
+$$("formAcc2").bind("datatableCuenta");
+
+$$('datatableCuenta').attachEvent('onAfterSelect',function(id){
+	IdCuenta = $$('datatableCuenta').getItem(id)._id;
+    $$('accNew').hide();
+    $$('accModify').show();
+});
+
+$$("formAcc1").bind("datatableDoc");
+$$("formAcc2").bind("datatableDoc");
+
+$$('datatableDoc').attachEvent('onAfterSelect',function(id){
+	IdDoc = $$('datatableDoc').getItem(id)._id;
+    $$('docNew').hide();
+    $$('docModify').show();
+});
+
+</script>
+
+    </body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Equipo 1</title>
+    <link rel="stylesheet" href="//cdn.webix.com/edge/webix.css" type="text/css"> 
+    <script src="//cdn.webix.com/edge/webix.js" type="text/javascript"></script>
+    <script src="./js/templates.js" type="text/javascript"></script>
+    <script src="./js/functionsAjax.js" type="text/javascript"></script>
+    <script src="./js/funcionesFormas.js" type="text/javascript"></script>
+    <script src="./js/templates.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <style>
+            .toolbar_color{
+                background:aliceblue; 
+                text-align: center;
+                height:400;
+            }
+            .center {
+                margin: auto;
+                width: 50%;
+            }
+            .flex-container {
+                display: flex;
+                background-color: #70a5fa;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 1rem;
+                min-height: 200px;
+            }
+
+            .divPadre {
+                background-color: #70a5fa;
+            }
+            .divHijo {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 1rem;
+                min-height: 400px;
+            }
+            .minH {
+                min-height: 200px;
+                background-color: #70a5fa;
+            }
+            .min20 {
+                width: 100%;
+                min-height: 200px;
+            }
+            .min2 {
+                min-height: 200px;
+            }
+            .min21 {
+                max-width: 200px;
+                min-height: 200px;
+            }
+        </style>
+        <div id="input" class="center"></div>
+        <script>
+            const arreglo = [
+            {
+
+"source": {
+    "id": null,
+    "name": "El Financiero"
+},
+"author": "David Saúl Vela",
+"title": "Exhiben a AMLO y a Vilchis: ‘quién es quién en las mentiras’ es propaganda morenista, dice Tribunal - El Financiero",
+"description": "La Sal Superior confirmó la sanción aplicable al director de Cepropie y al vocero de la presidencia Jesús Ramírez, por la difusión de la conferencia ‘mañanera’ del 23 de diciembre",
+"url": "https://www.elfinanciero.com.mx/nacional/2021/09/09/amlo-y-vilchis-usan-quien-es-quien-en-las-mentiras-como-propaganda-a-favor-de-morena-tribunal/",
+"urlToImage": "https://www.elfinanciero.com.mx/resizer/2OVBY55hz69GiWbLupkyy-YjGfE=/1200x630/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/DDZBUOQM2FCUBD36DIOYD7Z2M4.jpeg",
+"publishedAt": "2021-09-09T22:42:00Z",
+"content": "El presidente Andrés Manuel López Obrador y su colaboradora Ana Elizabeth García Vilchis utilizaron el Quién es Quién en las Mentiras para posicionar a Morena, resolvió el Tribunal Electoral del Pode… [+2332 chars]"
+
+},
+{
+
+"source": {
+    "id": null,
+    "name": "El Universal"
+},
+"author": null,
+"title": "Revive PRI-Mor: tricolor apoya a 4T para crear Ley de la Armada de México | El Universal - El Universal",
+"description": "El dictamen incluye apoyar a la Secretaría de Marina en sus funciones de Autoridad Marítima Nacional en materia de seguridad y protección marítima y portuaria",
+"url": "https://www.eluniversal.com.mx/nacion/revive-pri-mor-tricolor-apoya-4t-para-crear-ley-de-la-armada-de-mexico",
+"urlToImage": "https://www.eluniversal.com.mx/sites/default/files/2021/09/09/010pri-mor-1.jpg",
+"publishedAt": "2021-09-09T22:14:13Z",
+"content": "Con el voto a favor del PRI, los legisladores de la Cuarta Transformación (Morena, Verde y PT) aprobaron, en lo general, la minuta para expedir una nueva Ley Orgánica de la Armada de México con la qu… [+1953 chars]"
+
+},
+{
+
+"source": {
+    "id": null,
+    "name": "Digital Trends"
+},
+"author": "Raúl Estrada",
+"title": "Estos son todos los anuncios del PlayStation Showcase 2021 - Digital Trends Español",
+"description": "Las novedades más grandes fueron el remake de KOTOR y el anuncio de un juego de Wolverine para PS5.",
+"url": "https://es.digitaltrends.com/videojuego/playstation-showcase-2021-trailers-ps5/",
+"urlToImage": "https://icdn.dtcn.com/image/digitaltrends_es/wolverine-portada.jpg",
+"publishedAt": "2021-09-09T21:14:40Z",
+"content": "Sony llevó a cabo un nuevo evento digital para mostrar avances de lo que se viene para la PlayStation 5 (y también la PlayStation 4). El PlayStation Showcase 2021 llegó con algunos interesantes avanc… [+5218 chars]"
+
+},
+{
+
+"source": {
+    "id": null,
+    "name": "Digital Trends"
+},
+"author": "Raúl Estrada",
+"title": "Estos son todos los anuncios del PlayStation Showcase 2021 - Digital Trends Español",
+"description": "Las novedades más grandes fueron el remake de KOTOR y el anuncio de un juego de Wolverine para PS5.",
+"url": "https://es.digitaltrends.com/videojuego/playstation-showcase-2021-trailers-ps5/",
+"urlToImage": "https://icdn.dtcn.com/image/digitaltrends_es/wolverine-portada.jpg",
+"publishedAt": "2021-09-09T21:14:40Z",
+"content": "Sony llevó a cabo un nuevo evento digital para mostrar avances de lo que se viene para la PlayStation 5 (y también la PlayStation 4). El PlayStation Showcase 2021 llegó con algunos interesantes avanc… [+5218 chars]"
+
+},
+{
+
+"source": {
+    "id": null,
+    "name": "Digital Trends"
+},
+"author": "Raúl Estrada",
+"title": "Estos son todos los anuncios del PlayStation Showcase 2021 - Digital Trends Español",
+"description": "Las novedades más grandes fueron el remake de KOTOR y el anuncio de un juego de Wolverine para PS5.",
+"url": "https://es.digitaltrends.com/videojuego/playstation-showcase-2021-trailers-ps5/",
+"urlToImage": "https://icdn.dtcn.com/image/digitaltrends_es/wolverine-portada.jpg",
+"publishedAt": "2021-09-09T21:14:40Z",
+"content": "Sony llevó a cabo un nuevo evento digital para mostrar avances de lo que se viene para la PlayStation 5 (y también la PlayStation 4). El PlayStation Showcase 2021 llegó con algunos interesantes avanc… [+5218 chars]"
+
+}
+            ];
+
+            const templateNews = `
+                <div class="flex-container">
+                    <div>
+                        <img src="#urlToImage#" width="100">
+                        <br>
+                        <a href="#url#">Leer mas</a> 
+                    </div>
+                    
+                    <div style="max-width: 300px">
+                        <b>#title#</b><br>
+                        #content#
+                    </div>
+                </div>
+            `;
+
+            const localTraerNoticias = () => {
+                arreglo.forEach((item) => {
+                    const { title, content, url, urlToImage } = item;
+                    const template = `
+                    <div class="flex-container">
+                        <div>
+                            <img src="${urlToImage}" width="100">
+                            <br>
+                            <a href="${url}">Leer mas</a> 
+                        </div>
+                        
+                        <div>
+                            <b>${title}</b><br>
+                            ${content}
+                        </div>
+                    </div>
+                `;
+
+                const templateImage = `
+                        <div class='divHijo'>
+                            <img src="${urlToImage}" width="100">
+                            <br>
+                            <a href="${url}">Leer mas</a> 
+                        </div>`;
+                        const templateContent = `
+                        <div class='divHijo'>
+                            <b>${title}</b><br>
+                            ${content}
+                        </div>`;
+                    $$("htmlNews").addView({
+                        type:'space', 
+                        css:"minH",
+                        rows:[
+                            {
+                                css:"min20",
+                                cols:[ 
+                                    { template: templateImage, css:"min21" },
+                                    { template: templateContent, css:"min2" }
+                                ]
+                            }
+                        ]
+                    });
+                });
+            }
+                webix.ui({
+                    id: "htmlNews",
+                    type:'space',
+                    scroll:"auto",
+                    rows:[
+                        bienvenidoBanner,
+                    ]
+                });
+                localTraerNoticias();                   
+        </script>
+    </body>
+
+</html>
