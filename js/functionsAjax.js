@@ -1,4 +1,4 @@
-const urlServer = 'http://alumnos01.enlacenet.net:8022';
+const urlServer = 'http://localhost:8022';
 
 const traerDatosGet = (funcionAComplilar, api, informacion) => {
 	armarJWT();
